@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserSecurityService implements UserDetailsService {
 
-    /** The application logger */
+    /** The application logger 1234*/
     private static final Logger LOG = LoggerFactory.getLogger(UserSecurityService.class);
 
     @Autowired
