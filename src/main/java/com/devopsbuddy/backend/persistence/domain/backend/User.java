@@ -33,6 +33,14 @@ public class User implements Serializable {
     public User() {
 
     }
+    
+    
+    
+    
+    
+    
+    
+    
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
