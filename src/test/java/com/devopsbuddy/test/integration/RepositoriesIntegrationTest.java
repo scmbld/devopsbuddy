@@ -8,7 +8,9 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,6 +49,9 @@ public class RepositoriesIntegrationTest {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Rule public TestName testName = new TestName();
+	
 
 	@Before
 	public void init() {
@@ -83,8 +88,10 @@ public class RepositoriesIntegrationTest {
         Plan basicPlan = createPlan(PlansEnum.BASIC);
         planRepository.save(basicPlan);
 
+        String username =testName.getMethodName();
+        String email = testName.getMethodName() + "@ops.com";
         
-        User basicUser = UsersUtils.createBasicUser();
+        User basicUser = UsersUtils.createBasicUser(username,email);
         basicUser.setPlan(basicPlan);
 
         Role basicRole = createRole(RolesEnum.BASIC);

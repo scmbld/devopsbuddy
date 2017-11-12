@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private Environment env;
     
-    private static final String SALT= "eerererwerwer234234234";
+    private static final String SALT= "qwertyu;asdfgh";
     
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
