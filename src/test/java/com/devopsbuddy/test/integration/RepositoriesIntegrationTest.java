@@ -26,7 +26,7 @@ import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
-import com.devopsbuddy.utils.UsersUtils;
+import com.devopsbuddy.utils.UserUtils;
 /**
  * @author scmbld on 11-Nov-2017
  *
@@ -91,7 +91,7 @@ public class RepositoriesIntegrationTest {
         String username =testName.getMethodName();
         String email = testName.getMethodName() + "@ops.com";
         
-        User basicUser = UsersUtils.createBasicUser(username,email);
+        User basicUser = UserUtils.createBasicUser(username,email);
         basicUser.setPlan(basicPlan);
 
         Role basicRole = createRole(RolesEnum.BASIC);

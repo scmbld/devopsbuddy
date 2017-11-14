@@ -1,12 +1,5 @@
-/**
- * 
- */
 package com.devopsbuddy.backend.service;
 
-/**
- * @author scmbld on 12-Nov-2017
- *
- */
 import com.devopsbuddy.backend.persistence.domain.backend.User;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import org.slf4j.Logger;
@@ -16,11 +9,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
- 
+
+/**
+ * Created by tedonema on 31/03/2016.
+ */
 @Service
 public class UserSecurityService implements UserDetailsService {
 
-    /** The application logger 1234*/
+    /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(UserSecurityService.class);
 
     @Autowired
@@ -33,6 +29,6 @@ public class UserSecurityService implements UserDetailsService {
             LOG.warn("Username {} not found", username);
             throw new UsernameNotFoundException("Username " + username + " not found");
         }
-        return (UserDetails) user;
+        return user;
     }
 }

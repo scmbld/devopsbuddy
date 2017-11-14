@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.devopsbuddy.configs;
+package com.devopsbuddy.config;
 
 /**
  * @author scmbld on 06-Nov-2017

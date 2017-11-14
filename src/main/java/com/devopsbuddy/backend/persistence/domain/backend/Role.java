@@ -1,13 +1,4 @@
-/**
- * 
- */
 package com.devopsbuddy.backend.persistence.domain.backend;
-
-/**
- * @author scmbld on 09-Nov-2017
- *
- */
-
 
 import com.devopsbuddy.enums.RolesEnum;
 
@@ -30,7 +21,7 @@ public class Role implements Serializable {
 
     private String name;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<UserRole> userRoles = new HashSet<>();
 
     public Role() {

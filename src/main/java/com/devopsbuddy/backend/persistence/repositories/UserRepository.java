@@ -1,24 +1,16 @@
-/**
- * 
- */
 package com.devopsbuddy.backend.persistence.repositories;
 
-import org.jboss.logging.Param;
+import com.devopsbuddy.backend.persistence.domain.backend.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import com.devopsbuddy.backend.persistence.domain.backend.User;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author scmbld on 11-Nov-2017
- *
+ * Created by tedonema on 29/03/2016.
  */
- 
- 
- 
 @Repository
 @Transactional(readOnly = true)
 public interface UserRepository extends CrudRepository<User, Long> {
@@ -37,6 +29,8 @@ public interface UserRepository extends CrudRepository<User, Long> {
      */
     User findByEmail(String email);
 
-   
+    @Modifying
+    @Query("update User u set u.password = :password where u.id = :userId")
+    void updateUserPassword(@Param("userId") long userId, @Param("password") String password);
 
 }

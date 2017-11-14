@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.devopsbuddy.configs;
+package com.devopsbuddy.config;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
